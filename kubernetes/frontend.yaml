@@ -1,0 +1,50 @@
+#App
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capsp-frontend
+  namespace: jakir007-capsp
+spec:
+  replicas: 2
+  selector:
+    matchLabels: {app: capsp-frontend}
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels: {app: capsp-frontend}
+    spec:
+      imagePullSecrets: [{name: regcred}]
+      containers:
+        - name: vue
+          image: newjakir/capsp-frontend:latest
+          ports: [{containerPort: 80}]
+          envFrom: [{secretRef: {name: capsp-frontend-secret}}]
+          resources:
+            requests: {cpu: 100m, memory: 128Mi}
+            limits:   {cpu: 250m, memory: 256Mi}
+          readinessProbe:
+            httpGet: {path: /, port: 80}
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: {path: /, port: 80}
+            initialDelaySeconds: 30
+            periodSeconds: 20
+
+---
+#Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: capsp-frontend
+  namespace: jakir007-capsp
+spec:
+  type: ClusterIP
+  selector:
+    app: capsp-frontend
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+
