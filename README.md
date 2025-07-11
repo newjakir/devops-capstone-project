@@ -12,14 +12,16 @@ Each repository includes:
 
 The `/kubernetes` directory contains all Kubernetes manifest files required to deploy the complete application stack.
 
+The `/docs` directory contains detailed information about different phases of the project. The information is also available from index below.
+
 ---
 
 ### 📄 Documentation Index
 
 The following documents provide detailed information about different phases of the project:
 
-- [CI/CD Setup](doc/CI_CD_Setup.md)  
-- [Docker Containerization](doc/Docker_Containerization.md)  
-- [Kubernetes Architecture](doc/Kubernetes_Architecture.md)  
-- [Secret Management](doc/Secret_Management.md)  
-- [Monitoring & Logging](doc/Monitoring_Setup.md)
+- [CI/CD Setup](docs/CI_CD_Setup.md)  
+- [Docker Containerization](docs/Docker_Containerization.md)  
+- [Kubernetes Architecture](docs/Kubernetes_Architecture.md)  
+- [Secret Management](docs/Secret_Management.md)  
+- [Monitoring & Logging](docs/Monitoring_Setup.md)
