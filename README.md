@@ -25,3 +25,23 @@ The following documents provide detailed information about different phases of t
 - [Kubernetes Architecture](docs/Kubernetes_Architecture.md)  
 - [Secret Management](docs/Secret_Management.md)  
 - [Monitoring & Logging](docs/Monitoring_Setup.md)
+
+## ✅ Final Output
+
+The monitoring-enabled Kubernetes deployment has been successfully completed. Below are the accessible endpoints for each component:
+
+### 🔗 Application URLs
+
+- **Frontend Application**: [http://fs.jakirdev.com/](http://fs.jakirdev.com/)
+- **Backend API**: [http://finchback.jakirdev.com/](http://finchback.jakirdev.com/)
+
+### 📊 Monitoring Dashboard
+
+- **Grafana Dashboards**: [https://grafanafs.jakirdev.com/](https://grafanafs.jakirdev.com/)
+  - **Username**: `admin`
+  - **Password**: `admin123`
+
+Grafana dashboards provide:
+- Application metrics (frontend and backend)
+- Kubernetes cluster health and resource usage
+- PostgreSQL and Redis performance
